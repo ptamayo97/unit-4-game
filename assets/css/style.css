@@ -45,6 +45,7 @@ p {
     background-color: #fff4bd;
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
     border: 15px groove rgb(204, 160, 102);
+    width: 200px;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -54,7 +55,7 @@ p {
 
 .winLossCount {
     text-align: center;
-    font-size: 24px;
+    font-size: 36px;
     margin: 15px 0;
     
 }
@@ -73,7 +74,17 @@ p {
     clear: both;
 }
 
+.target-box {
+    width: 300px;
+    height: 150px;
+    color: black;   
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    border: 15px groove rgb(204, 160, 102);
+}
+
 .scoreboard {
+    width: 200px;
     height: 150px;
     color: black;   
     background-color: #fff4bd;
@@ -81,7 +92,7 @@ p {
     border: 15px groove rgb(204, 160, 102);
 }
 .scoretext {
-    width: 300px;
+    
     border-bottom: 15px groove rgb(204, 160, 102);
     display: flex;
     justify-content: center;
@@ -89,7 +100,7 @@ p {
 }
 
 .score {
-    width: 300px;
+    
     font-size: 75px;
     display: flex;
     justify-content: center;
@@ -125,19 +136,139 @@ p {
 #ruby {
     background: red;
     border: 12px outset darkred;   
+    position: relative;
+}
+
+#ruby:hover {
+    color: white;
+    box-shadow: 0 0 30px 0 red;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#ruby:hover:before {
+    -webkit-animation: shine 0.5s 0s linear;
+    -moz-animation: shine 0.5s 0s linear;
+    animation: shine 0.5s 0s linear;
 }
 
 #diamond {
     background: cyan;
     border: 12px outset teal;
+    position: relative;
+}
+
+#diamond:hover {
+    color: white;
+    box-shadow: 0 0 30px 0 cyan;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#diamond:hover:before {
+    -webkit-animation: shine 0.5s 0s linear;
+    -moz-animation: shine 0.5s 0s linear;
+    animation: shine 0.5s 0s linear;
 }
 
 #apatite {
     background: yellow;
     border: 12px outset darkgoldenrod;
+    position: relative;
+}
+
+#apatite:hover {
+    color: white;
+    box-shadow: 0 0 30px 0 yellow;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#apatite:hover:before {
+    -webkit-animation: shine 0.5s 0s linear;
+    -moz-animation: shine 0.5s 0s linear;
+    animation: shine 0.5s 0s linear;
 }
 
 #emerald {
     background: rgb(30, 216, 30);
     border: 12px outset green;
+    position: relative;
+}
+
+#emerald:hover {
+    color: white;
+    box-shadow: 0 0 30px 0 rgb(30, 216, 30);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#emerald:hover:before {
+    -webkit-animation: shine 0.5s 0s linear;
+    -moz-animation: shine 0.5s 0s linear;
+    animation: shine 0.5s 0s linear;
+}
+
+.button:before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: white;
+    box-shadow: 0 0 15px 3px white;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+  
+@-webkit-keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+}
+
+ @-moz-keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+}
+
+@keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
 }

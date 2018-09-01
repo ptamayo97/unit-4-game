@@ -1,5 +1,24 @@
 
 
+//*********************************************************************** 
+// 
+// TO DO!!!!!!!!!
+// 
+// 1. winsLosses blink blue if user wins and blink red when user losses
+// 
+// 2. give buttons a click animation and sound
+// 
+// 3. change layout of game
+//      a. have instructions and game appear seperatly
+//          i. instructions first. when user enter switch to game
+//      b. make responsive?
+// 
+// 
+//*********************************************************************** 
+
+
+// Global Variables
+
 var crystals = {
     ruby: {
         value: 0
@@ -19,16 +38,13 @@ var targetScore = 0;
 var wins = 0;
 var losses = 0;
 
-
-
-
 //functions
 
 var randomNumber = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var startGame = function () {
+function startGame () {
     userScore = 0;
     targetScore = randomNumber(19, 120);
 
@@ -45,14 +61,14 @@ var startGame = function () {
     
 }
 
-var addValues = function(crystals) {
+function addValues(crystals) {
     userScore = userScore + crystals.value;
     $("#userScore").html(userScore);
     userWin();
     // console.log("Your Score: " + userScore);
 }
 
-var userWin = function() {
+function userWin() {
 
     if (userScore === targetScore) {
         wins++
@@ -68,8 +84,8 @@ var userWin = function() {
 
 }
 
-
 startGame();
+
 //click handlers
 
 $("#ruby").on("click", function() {
@@ -88,29 +104,10 @@ $("#emerald").on("click", function() {
     addValues(crystals.emerald);
 });
 
-// 3. Here's how the app works:
+$("#reset").on("click", function() {
 
-//    * There will be four crystals displayed as buttons on the page.
+    $("#wins").html("Wins: " + 0);
+    $("#losses").html("Losses: " + 0);
 
-//    * The player will be shown a random number at the start of the game.
-
-//    * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-
-//      * Your game will hide this amount until the player clicks a crystal.
-//      * When they do click one, update the player's score counter.
-
-//    * The player wins if their total score matches the random number from the beginning of the game.
-
-//    * The player loses if their score goes above the random number.
-
-//    * The game restarts whenever the player wins or loses.
-
-//    * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
-
-//    * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-
-// ##### Option 1 Game design notes
-
-// * The random number shown at the start of the game should be between 19 - 120.
-
-// * Each crystal should have a random hidden value between 1 - 12.
+    startGame();
+});

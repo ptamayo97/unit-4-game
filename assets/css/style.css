@@ -4,6 +4,7 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
     font-weight: bold;
     font-family: 'Cinzel', serif;
+    text-shadow: 1px 1px 0 rgba(39, 38, 38, 0.6);
 }
 
 .title {
@@ -11,7 +12,7 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    text-align: center;
     margin: 0 20%;
     border: 15px ridge rgb(204, 160, 102);   
-    text-shadow: 1.25px 1.25px 0 rgba(39, 38, 38, 0.6);
+    text-shadow: 1px 1px 0 rgba(39, 38, 38, 0.6);
 }
 
 .instructions {
@@ -19,7 +20,7 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
     border: 15px ridge rgb(204, 160, 102);
     margin: 10px 20% 10px;
-        
+    text-shadow: none;
 }
 
 h1 {
@@ -64,10 +65,6 @@ p {
     float: left;
 }
 
-.right {
-    float: right;
-}
-
 .clearfix {
     display: block;
     content: '';
@@ -109,8 +106,9 @@ p {
 }
 
 .crystalRow {
-    margin: 10px 30%;
+    margin-left:20%;
     display: flex;
+    width: 566px;
     justify-content: space-around;
     padding: 10px;
     background-color: #fff4bd;
@@ -123,6 +121,26 @@ p {
     width: 60px;
     background: #ffffff;
     margin: 0 20px;
+}
+
+.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px
+}
+
+#reset {
+    height: 84px;
+    width: 200px;
+    margin-right: 20%;
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    border: 15px groove rgb(204, 160, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    padding:10px
 }
 
 #targetScore {

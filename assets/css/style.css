@@ -1,52 +1,72 @@
 
 body {
-    background: lightblue;
+    background-color: #681f00;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-wood.png");
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
 }
 
 .title {
-    background: orange;
-    width: 20%;
-    text-align: center;
-    margin: 10px;
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    text-align: center;
+    margin: 0 20%;
+    border: 15px ridge rgb(204, 160, 102);   
+    text-shadow: 1.25px 1.25px 0 rgba(39, 38, 38, 0.6);
 }
 
 .instructions {
-    background: tan;
-    width: 600px;
-    height: 400px;
-    margin: 5px 5px 5px 10px;
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
+
+    border: 15px ridge rgb(204, 160, 102);
+    height: 320px;
+    margin: 10px 20% 10px;
+        
 }
 
 h1 {
     font-size: 32px;
     padding: 15px;
     font-weight: bold;
-    color: #ffffff;
+    color: black;
 
 }
 p {
-    margin: 20px;
-    font-size: 20px;
+    margin: 5px;
+    font-size: 22px;
     line-height: 32px;
 }
 
-.objectiveBox {
-    background: green;
-    width: 300px;
-    height: 150px; 
-    margin: 10px; 
-    opacity: .6;
+.greybox {
+    margin:0 20%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .winsLosses {
-     background: cyan;
-     width: 100px;
-     height: 150px;
-     margin: 10px;
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    border: 15px groove rgb(204, 160, 102);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.winLossCount {
+    text-align: center;
+    font-size: 24px;
+    margin: 15px 0;
+    
 }
 
 .left {
     float: left;
+}
+
+.right {
+    float: right;
 }
 
 .clearfix {
@@ -55,24 +75,71 @@ p {
     clear: both;
 }
 
+.scoreboard {
+    height: 150px;
+    color: black;   
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    border: 15px groove rgb(204, 160, 102);
+}
 .scoretext {
-    background: teal;
     width: 300px;
-    margin: 10px;
+    border-bottom: 15px groove rgb(204, 160, 102);
+    display: flex;
+    justify-content: center;
+    padding: 5px;
 }
 
-.scoreboard {
-    background: teal;
+.score {
     width: 300px;
-    height: 150px;
-    margin: 10px;
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
+
 .crystalRow {
-    margin: 10px;
+    margin: 10px 30%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #fff4bd;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    border: 15px groove rgb(204, 160, 102);
 }
+
 .crystal{
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     background: #ffffff;
-    margin: 5px;
+    margin: 0 20px;
+}
+
+#targetScore {
+    color: black;
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;       
+}
+
+#ruby {
+    background: red;
+    border: 12px outset darkred;   
+}
+
+#diamond {
+    background: cyan;
+    border: 12px outset teal;
+}
+
+#apatite {
+    background: yellow;
+    border: 12px outset darkgoldenrod;
+}
+
+#emerald {
+    background: rgb(30, 216, 30);
+    border: 12px outset green;
 }

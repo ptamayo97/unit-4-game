@@ -105,9 +105,11 @@ $("#emerald").on("click", function() {
 });
 
 $("#reset").on("click", function() {
-
-    $("#wins").html("Wins: " + 0);
-    $("#losses").html("Losses: " + 0);
+    wins = 0;
+    losses = 0;
+    
+    $("#wins").html("Wins: " + wins);
+    $("#losses").html("Losses: " + losses);
 
     startGame();
 });

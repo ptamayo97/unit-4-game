@@ -17,9 +17,7 @@ body {
 .instructions {
     background-color: #fff4bd;
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
-
     border: 15px ridge rgb(204, 160, 102);
-    height: 320px;
     margin: 10px 20% 10px;
         
 }

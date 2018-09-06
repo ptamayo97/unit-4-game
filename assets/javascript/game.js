@@ -37,7 +37,7 @@ var userScore = 0;
 var targetScore = 0;
 var wins = 0;
 var losses = 0;
-
+var btnAudio = new Audio("assets/Ting-Popup_Pixels-349896185.mp3");
 //functions
 
 var randomNumber = function(min, max) {
@@ -63,6 +63,7 @@ function startGame () {
 
 function addValues(crystals) {
     userScore = userScore + crystals.value;
+    // return(userScore);
     $("#userScore").html(userScore);
     userWin();
     // console.log("Your Score: " + userScore);
@@ -73,13 +74,21 @@ function userWin() {
     if (userScore === targetScore) {
         wins++
         $("#wins").html("Wins: " + wins);
-        alert("You Win!")
-        startGame();
+        setTimeout(function () {
+            alert("You Win!");
+            startGame();
+        } ,10)
+        
+        
     } else if (userScore > targetScore) {
         losses++
         $("#losses").html("Losses: " + losses);
-        alert("You lose!")
-        startGame();
+        setTimeout(function () {
+            alert("You lose!");
+            startGame();
+        } ,10)
+        
+        
     } 
 
 }
@@ -89,25 +98,32 @@ startGame();
 //click handlers
 
 $("#ruby").on("click", function() {
+    btnAudio.play();
     addValues(crystals.ruby);
 });
 
 $("#diamond").on("click", function() {
+    btnAudio.play();
     addValues(crystals.diamond);
+
 });
 
 $("#apatite").on("click", function() {
+    btnAudio.play();
     addValues(crystals.apatite);
+    
 });
 
 $("#emerald").on("click", function() {
+    btnAudio.play();
     addValues(crystals.emerald);
+    
 });
 
 $("#reset").on("click", function() {
     wins = 0;
     losses = 0;
-    
+     
     $("#wins").html("Wins: " + wins);
     $("#losses").html("Losses: " + losses);
 

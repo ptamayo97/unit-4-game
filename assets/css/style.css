@@ -121,6 +121,7 @@ p {
     width: 60px;
     background: #ffffff;
     margin: 0 20px;
+    box-shadow: 3px 3px 0 rgba(39, 38, 38, 0.6);
 }
 
 .bottom-row {
@@ -139,7 +140,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+    font-size: 40px;
     padding:10px
 }
 
@@ -289,4 +290,23 @@ p {
       opacity: 0;
       left: 100%;
     }
+}
+
+.littlebox {
+    background: rgb(204, 160, 102);
+    height: 7px;
+    width: 8px;
+    
+}
+
+#leftdot {
+    position: absolute;
+    top: 509px;
+    left: 522px;
+}
+
+#rightdot {
+    position: absolute;
+    top: 509px;
+    right: 620px;
 }

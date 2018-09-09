@@ -1,22 +1,4 @@
 
-
-//*********************************************************************** 
-// 
-// TO DO!!!!!!!!!
-// 
-// 1. winsLosses blink blue if user wins and blink red when user losses
-// 
-// 2. give buttons a click animation and sound
-// 
-// 3. change layout of game
-//      a. have instructions and game appear seperatly
-//          i. instructions first. when user enter switch to game
-//      b. make responsive?
-// 
-// 
-//*********************************************************************** 
-
-
 // Global Variables
 
 var crystals = {
@@ -37,7 +19,8 @@ var userScore = 0;
 var targetScore = 0;
 var wins = 0;
 var losses = 0;
-var btnAudio = new Audio("assets/Ting-Popup_Pixels-349896185.mp3");
+
+
 //functions
 
 var randomNumber = function(min, max) {
@@ -47,7 +30,6 @@ var randomNumber = function(min, max) {
 function startGame () {
     userScore = 0;
     targetScore = randomNumber(19, 120);
-
     crystals.ruby.value = randomNumber(1, 12);
     crystals.diamond.value = randomNumber(1, 12);
     crystals.apatite.value = randomNumber(1, 12);
@@ -56,74 +38,82 @@ function startGame () {
     $("#userScore").html(userScore);
     $("#targetScore").html(targetScore);
 
-    // console.log("target score: " + targetScore);
-    // console.log("Ruby: " + crystals.ruby.value + " | Diamond: " + crystals.diamond.value + " | Apatite: " + crystals.apatite.value + " | Emerald: " + crystals.emerald.value);
-    
+    winAudio.load();
+    loseAudio.load();  
 }
 
 function addValues(crystals) {
     userScore = userScore + crystals.value;
-    // return(userScore);
     $("#userScore").html(userScore);
     userWin();
-    // console.log("Your Score: " + userScore);
 }
 
-function userWin() {
+var winAudio = new Audio("assets/audio/rep_fairy.mp3");
+var loseAudio = new Audio("assets/audio/for-the-damaged-loop.mp3");
 
+function userWin() {
+    
     if (userScore === targetScore) {
         wins++
         $("#wins").html("Wins: " + wins);
+        winAudio.play();
         setTimeout(function () {
             alert("You Win!");
             startGame();
         } ,10)
-        
-        
+           
     } else if (userScore > targetScore) {
         losses++
         $("#losses").html("Losses: " + losses);
+        loseAudio.play();
         setTimeout(function () {
-            alert("You lose!");
+            alert("You Lose!");
             startGame();
-        } ,10)
-        
-        
+        } ,10)   
     } 
 
 }
 
 startGame();
 
+
 //click handlers
 
+var btnAudio = [new Audio("assets/audio/adriantnt_glass.mp3"), new Audio("assets/audio/adriantnt_glass.mp3"), new Audio("assets/audio/adriantnt_glass.mp3"), new Audio("assets/audio/adriantnt_glass.mp3"), new Audio("assets/audio/adriantnt_glass.mp3"), new Audio("assets/audio/adriantnt_glass.mp3")];
+var soundNb = 0;
+
 $("#ruby").on("click", function() {
-    btnAudio.play();
+    btnAudio[ soundNb % btnAudio.length ].play(); 
+    soundNb++; 
     addValues(crystals.ruby);
 });
 
 $("#diamond").on("click", function() {
-    btnAudio.play();
+    btnAudio[ soundNb % btnAudio.length ].play(); 
+    soundNb++; 
     addValues(crystals.diamond);
-
 });
 
 $("#apatite").on("click", function() {
-    btnAudio.play();
-    addValues(crystals.apatite);
-    
+    btnAudio[ soundNb % btnAudio.length ].play(); 
+    soundNb++; 
+    addValues(crystals.apatite);    
 });
 
 $("#emerald").on("click", function() {
-    btnAudio.play();
-    addValues(crystals.emerald);
-    
+    btnAudio[ soundNb % btnAudio.length ].play(); 
+    soundNb++; 
+    addValues(crystals.emerald); 
 });
+
+var resetAudio = [new Audio("assets/audio/slam.mp3"), new Audio("assets/audio/slam.mp3")];
+var resetNb = 0;
 
 $("#reset").on("click", function() {
     wins = 0;
     losses = 0;
-     
+    resetAudio[ resetNb % resetAudio.length ].play(); 
+    resetNb++;     
     $("#wins").html("Wins: " + wins);
     $("#losses").html("Losses: " + losses);
 

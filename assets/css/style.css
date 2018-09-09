@@ -9,7 +9,8 @@ body {
 
 .title {
     background-color: #fff4bd;
-    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    text-align: center;
+    background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
+    text-align: center;
     margin: 0 20%;
     border: 15px ridge rgb(204, 160, 102);   
     text-shadow: 1px 1px 0 rgba(39, 38, 38, 0.6);
@@ -30,6 +31,7 @@ h1 {
     color: black;
 
 }
+
 p {
     margin: 5px;
     font-size: 22px;
@@ -88,6 +90,7 @@ p {
     background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");    
     border: 15px groove rgb(204, 160, 102);
 }
+
 .scoretext {
     
     border-bottom: 15px groove rgb(204, 160, 102);
@@ -141,7 +144,7 @@ p {
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    padding:10px
+    padding:10px;
 }
 
 #targetScore {
